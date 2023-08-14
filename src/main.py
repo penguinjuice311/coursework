@@ -3,7 +3,6 @@ from website import create_app
 def main():
     app = create_app()
 
-    print("running")
 
     app.run(debug = True)
 
