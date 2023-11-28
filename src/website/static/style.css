@@ -1,2 +1,41 @@
+:root{
+    --black: #020202ff;
+    --dark-green: #0d2818ff;
+    --white: #fcfff7ff;
+    --green: #04471cff;
+    --light-green: #04e824ff;
+}
 
-.button
+.black {color: var(--black);}
+.dark-green {color: var(--white);}
+.white {color: var(--white);}
+.green {color: var(--green);}
+.light-green {color: var(--light-green);}
+
+.bg-black {background: var(--black);}
+.bg-dark-green {background: var(--white);}
+.bg-white {background: var(--white);}
+.bg-green {background: var(--green);}
+.bg-light-green {background: var(--light-green);}
+
+.flex-containter {display: flex;}
+.row {flex-direction: row;}
+
+.circle {border-radius: 50%}
+
+.no-underline {text-decoration-line: none;}
+.align-left {width: 40%; height: 100%;}
+.small-square {width: 20%; height: 20%;}
+
+
+
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    height: 3rem;
+    width: 15rem;
+    margin: 1rem;
+}

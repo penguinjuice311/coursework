@@ -1,32 +1,40 @@
+from typing import Protocol
 from flask import Blueprint, render_template
 
-views = Blueprint("views", __name__)
 
-owners = ["connor", "kya", "finn"]
+class User(Protocol):
+    pass
 
-walkers = ["louise", "john", "martha"]
+def make_views(user: User) -> Blueprint:
+    views = Blueprint("views", __name__)
 
-@views.route("/")
-def home():
-    return render_template("home.html")
+    owners = ["connor", "kya", "finn"]
 
-@views.route("/log-in")
-def log_in():
-    return render_template("log-in.html")
+    walkers = ["louise", "john", "martha"]
 
-@views.route("/sign-up")
-def sign_up():
-    return render_template("sign-up.html")
+    @views.route("/")
+    def home():
+        return render_template("home.html")
 
-@views.route("/register")
-def register():
-    return render_template("register.html")
+    @views.route("/log-in")
+    def log_in():
+        return render_template("log-in.html")
+
+    @views.route("/sign-up")
+    def sign_up():
+        return render_template("sign-up.html")
+
+    @views.route("/register")
+    def register():
+        return render_template("register.html")
 
 
-@views.route("/dashboard/<id>")
-def dashboard():
-    return ""
+    @views.route("/dashboard/<id>")
+    def dashboard():
+        return ""
 
-@views.route("/profile/<id>")
-def profile():
-    return ""
+    @views.route("/profile/<id>")
+    def profile():
+        return ""
+
+    return views
