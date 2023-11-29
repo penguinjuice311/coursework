@@ -21,6 +21,8 @@ def main():
 
     app = create_app(constring)
 
+    app.config["SECRET_KEY"] = "ILOVESPONGEBOB"
+
 
     app.run(debug = True)
 
