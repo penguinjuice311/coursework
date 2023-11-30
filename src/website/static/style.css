@@ -27,7 +27,7 @@
 .align-left {width: 40%; height: 100%;}
 .small-square {width: 20%; height: 20%;}
 
-.flex {display: flex:}
+.flex {display: flex;}
 
 .btn {
     display: flex;
@@ -40,3 +40,5 @@
 }
 
 div {flex: 1;}
+
+.center {text-align: center;}

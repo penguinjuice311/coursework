@@ -1,4 +1,5 @@
 from pyodbc import Row, connect
+from typing import Union
 
 class Sql:
     def __init__(self, con_string: str):
@@ -7,7 +8,7 @@ class Sql:
     def probe_rows(self, statement: str) -> list[Row]:
         pass
 
-    def probe_row(self, statement: str) -> Row | None:
+    def probe_row(self, statement: str) -> Union[Row, None]:
         pass
 
     def alter(self, statement: str):

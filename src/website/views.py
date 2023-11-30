@@ -2,6 +2,8 @@ from typing import Protocol
 from flask import Blueprint, render_template, request
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired
+
 
 class User(Protocol):
     def get_name(email: str) -> str:
@@ -13,7 +15,7 @@ class User(Protocol):
 class LoginForm(FlaskForm):
     email = StringField("email")
     password = PasswordField("password")
-    submit = SubmitField("Log In")
+    submit = SubmitField("Log In", validators=[DataRequired()])
 
 def make_views(user: User) -> Blueprint:
     views = Blueprint("views", __name__)

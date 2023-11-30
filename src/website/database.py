@@ -1,13 +1,13 @@
 from typing import Protocol
 from pyodbc import Row 
-
+from typing import Union
 
 class Sql(Protocol):
 
     def probe_rows(self, statement: str) -> list[Row]:
         ... 
 
-    def probe_row(self, statement: str) -> Row | None:
+    def probe_row(self, statement: str) -> Union[Row, None]:
         ...
 
     def alter(self, statement: str):
