@@ -1,33 +1,39 @@
 :root{
     --black: #020202ff;
     --dark-green: #0d2818ff;
+    --darker-green:#0a1f12ff;
     --white: #fcfff7ff;
     --green: #04471cff;
     --light-green: #04e824ff;
 }
 
 .black {color: var(--black);}
-.dark-green {color: var(--white);}
+.dark-green {color: var(--dark-green);}
+.darker-green {color: var(--darker-green);}
 .white {color: var(--white);}
 .green {color: var(--green);}
 .light-green {color: var(--light-green);}
 
 .bg-black {background: var(--black);}
-.bg-dark-green {background: var(--white);}
+.bg-dark-green {background: var(--dark-green);}
+.bg-darker-green {background: var(--darker-green);}
 .bg-white {background: var(--white);}
 .bg-green {background: var(--green);}
 .bg-light-green {background: var(--light-green);}
 
 .flex-containter {display: flex;}
 .row {flex-direction: row;}
+.column {flex-direction: column;}
 
 .circle {border-radius: 50%}
+.rounded {border-radius: 1.5rem;}
 
 .no-underline {text-decoration-line: none;}
 .align-left {width: 40%; height: 100%;}
 .small-square {width: 20%; height: 20%;}
 
 .flex {display: flex;}
+.block {display: block;}
 
 .btn {
     display: flex;
@@ -37,6 +43,13 @@
     height: 3rem;
     width: 15rem;
     margin: 1rem;
+}
+
+.identity {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: 1fr;
+    justify-content: center;
 }
 
 div {flex: 1;}

@@ -13,7 +13,7 @@ class User(Protocol):
         ...
 
 class LoginForm(FlaskForm):
-    email = StringField("email")
+    email = StringField("email", render_kw = {"placeholder": "email"})
     password = PasswordField("password")
     submit = SubmitField("Log In", validators=[DataRequired()])
 
@@ -24,9 +24,17 @@ def make_views(user: User) -> Blueprint:
 
     walkers = ["louise", "john", "martha"]
 
-    @views.route("/")
+    @views.route("/", methods = ["GET", "POST"])
     def home():
-        return render_template("home.html")
+        login_form = LoginForm()
+        if login_form.is_submitted():
+            result = request.form
+            email = result["email"]
+            name = user.get_name(result["email"])
+            template = "walker_dashboard.html" if user.is_walker(email) else "owner_dashboard.html"
+            return render_template(template, name = name)
+
+        return render_template("home.html", login_form=login_form)
 
     @views.route("/log-in", methods = ["GET", "POST"])
     def log_in():
