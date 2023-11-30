@@ -1,23 +1,19 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body class="bg-light-green flex-containter row">
-   <div class="Account-Options bg-white align-left">
-       <h1 class="green">Dog Walking</h1>
-       <div>
-           <a href="/log-in" role="button" class="white no-underline bg-green btn">Log In</a>
-       </div>
-       <div>
-           <a href="/sign-up" role="button" class="white no-underline bg-green btn">Sign Up</a>
+{% extends "account_base.html" %}
 
-       </div>
-       <div>
-           <a href="/register" role="button" class="white no-underline bg-green btn">Become A Walker</a>
-       </div>
-   </div>
-</body>
-</html>
+{% block content %}
+    <div class="Account-Options bg-white">
+        <h1 class="green">Dog Walking</h1>
+        <div class="flex-containter">
+            <div>
+                <a href="/log-in" role="button" class="white no-underline bg-green btn">Log In</a>
+            </div>
+            <div>
+                <a href="/sign-up" role="button" class="white no-underline bg-green btn">Sign Up</a>
+    
+            </div>
+            <div>
+                <a href="/register" role="button" class="white no-underline bg-green btn">Become A Walker</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
