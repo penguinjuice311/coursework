@@ -1,5 +1,5 @@
 from typing import Protocol
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired
@@ -10,6 +10,9 @@ class User(Protocol):
         ...
 
     def is_walker(email: str) -> bool:
+        ...
+
+    def email_exists(email: str) -> bool:
         ...
 
 class LoginForm(FlaskForm):
@@ -40,11 +43,13 @@ def make_views(user: User) -> Blueprint:
     def log_in():
         form = LoginForm()
         if form.is_submitted():
+            if not user.email_exists():
+                #do something
+                pass
             result = request.form
             email = result["email"]
-            name = user.get_name(result["email"])
-            template = "walker_dashboard.html" if user.is_walker(email) else "owner_dashboard.html"
-            return render_template(template, name = name)
+            redirect(f"/dashboard/{id}")
+
         return render_template("log-in.html", form = form)
 
     @views.route("/sign-up")
@@ -58,6 +63,9 @@ def make_views(user: User) -> Blueprint:
 
     @views.route("/dashboard/<id>")
     def dashboard():
+        name = user.get_name(result["email"])
+        template = "walker_dashboard.html" if user.is_walker(email) else "owner_dashboard.html"
+        return render_template(template, name = name)
         return ""
 
     @views.route("/profile/<id>")

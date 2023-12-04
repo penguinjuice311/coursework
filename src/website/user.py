@@ -8,3 +8,6 @@ class User:
 
     def is_walker(self, email: str):
         return "walker" in email
+
+    def email_exists(email: str) -> bool:
+        return True 

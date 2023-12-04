@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Search for {{search}}</h1>
+    <li>
+        {{f"<li>{walker.name}</li>" for walker in walkers}}
+    </li>
+{% endblock %}

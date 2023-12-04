@@ -19,6 +19,6 @@ def create_app(constring):
     
     app.register_blueprint(make_views(User()))
     app.register_blueprint(make_auth(Database(sql)), url_prefix = "/auth")
-    app.register_blueprint(make_input_validation(validator, user ), url_prefix = "/validation")
+    app.register_blueprint(make_input_validation(validator, user), url_prefix = "/validation")
 
     return app
