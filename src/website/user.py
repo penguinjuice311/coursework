@@ -2,8 +2,11 @@
 
 class User:
     def get_name(self, email: str):
-        if email == "kya@gmail.com":
-            return "kya"
+        table = ["smudge", "kya", "connor", "teddy", "bob", "john", "peter", "jenifer", "person"]
+        for name in table:
+            if name in email:
+                return name
+        
         return "connor" 
 
     def is_walker(self, email: str):

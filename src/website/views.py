@@ -6,26 +6,23 @@ from wtforms.validators import DataRequired
 
 
 class User(Protocol):
-    def get_name(email: str) -> str:
+    def get_name(self, email: str) -> str:
         ...
 
-    def is_walker(email: str) -> bool:
+    def is_walker(self, email: str) -> bool:
         ...
 
-    def email_exists(email: str) -> bool:
+    def email_exists(self, email: str) -> bool:
         ...
 
 class LoginForm(FlaskForm):
-    email = StringField("email", render_kw = {"placeholder": "email"})
-    password = PasswordField("password")
-    submit = SubmitField("Log In", validators=[DataRequired()])
+    email = StringField("email", render_kw = {"placeholder": "email"}, validators = [DataRequired("need an email")])
+    password = PasswordField("password", validators = [DataRequired("need an password")])
+    submit = SubmitField("Log In")
 
 def make_views(user: User) -> Blueprint:
+    user_id = ""
     views = Blueprint("views", __name__)
-
-    owners = ["connor", "kya", "finn"]
-
-    walkers = ["louise", "john", "martha"]
 
     @views.route("/", methods = ["GET", "POST"])
     def home():
@@ -69,7 +66,9 @@ def make_views(user: User) -> Blueprint:
         return ""
 
     @views.route("/profile/<id>")
-    def profile():
-        return ""
+    def profile(id):
+        print(id)
+        name = user.get_name(id)
+        return render_template("profile.html", name = name)
 
     return views

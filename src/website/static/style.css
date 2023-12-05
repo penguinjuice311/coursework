@@ -56,3 +56,9 @@ div {flex: 1;}
 
 .center {text-align: center;}
 .align-right {margin-right: auto;}
+
+.text-right {text-align: right;}
+.text-left {text-align: left;}
+
+.fill {width: 100%;}
+

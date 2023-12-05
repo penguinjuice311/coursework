@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Search for {{search}}</h1>
-    <li>
-        {{f"<li>{walker.name}</li>" for walker in walkers}}
-    </li>
+    <h1>Searching for {{ search }}</h1>
+    <ul>
+        {% for walker in walkers %}
+        <li>
+            <a href="/profile/{{walker.email}}">
+                {{walker.name}}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

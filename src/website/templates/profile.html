@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2> Walker {{name}}</h2>
+    <div class="flex">
+        <div>
+            <h2>Next month</h2>
+        </div>
+        <div>
+            <h2>
+                Previous walks
+            </h2>
+        </div>
+        <div class="flex column">
+            <h2>Info</h2>
+            <div class="flex row">
+                <h3 class="text-left fill">
+                    name
+                </h3>
+                <h3 class="text-right fill">
+                    {{name}}
+                </h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}
