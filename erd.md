@@ -35,7 +35,7 @@ Placement {
   int AppointmentID fk
   int OwnerEmailAdress fk
   int PetsNumber
-  bitfield PlacementOptions
+  int PlacementOptions
   nstring SpecialRequirements }
 
 Review {
