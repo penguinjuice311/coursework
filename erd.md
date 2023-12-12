@@ -12,7 +12,7 @@ Walker {
   string Biography 
   string Fname
   string Lname
-  bitfield Options
+  int Options
   string Password }
 
 Owner {
@@ -27,7 +27,7 @@ Appointment {
   int WalkerEmailAdress fk
   int Day 
   int MaxPets
-  bitfield AppointmentOptions
+  int AppointmentOptions
   Bool Repeat
   time Time }
 
