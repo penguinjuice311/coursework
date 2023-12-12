@@ -28,7 +28,7 @@ Appointment {
   int Day 
   int MaxPets
   bitfield AppointmentOptions
-  repeat Bool
+  Bool Repeat
   time Time }
 
 Placement {
