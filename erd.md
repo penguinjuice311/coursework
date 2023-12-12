@@ -35,7 +35,7 @@ Placement {
   int AppointmentID fk
   int OwnerEmailAdress fk
   int PetsNumber
-  int PlacementOptions
+  int Options
   nstring SpecialRequirements }
 
 Review {
