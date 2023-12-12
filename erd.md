@@ -24,7 +24,7 @@ Owner {
 
 Appointment {
   int AppointmentID pk
-  int EmailAdress fk
+  int WalkerEmailAdress fk
   int Day 
   int MaxPets
   bitfield AppointmentOptions
@@ -33,7 +33,7 @@ Appointment {
 
 Placement {
   int AppointmentID fk
-  int EmailAdress fk
+  int OwnerEmailAdress fk
   int PetsNumber
   bitfield PlacementOptions
   nstring SpecialRequirements }
