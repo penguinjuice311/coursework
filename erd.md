@@ -9,6 +9,7 @@ Owner ||--o{Review: Reviews
 
 Walker {
   string EmailAdress pk
+  string PhoneNumber
   string Biography 
   string Fname
   string Lname
