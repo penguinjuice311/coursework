@@ -8,15 +8,15 @@ Walker ||--o{Review: Reviewed
 Owner ||--o{Review: Reviews
 
 Walker {
-  string WalkerEmailAdress pk
+  string EmailAdress pk
   string Biography 
   string Fname
   string Lname
-  bitfield WalkerOptions
+  bitfield Options
   string Password }
 
 Owner {
-  string OwnerEmailAdress pk
+  string EmailAdress pk
   string PhoneNumber 
   string Fname
   string Lname
@@ -24,23 +24,23 @@ Owner {
 
 Appointment {
   int AppointmentID pk
-  int WalkerEmailAdress fk
+  int EmailAdress fk
   int Day 
   int MaxPets
   bitfield AppointmentOptions
+  repeat Bool
   time Time }
 
 Placement {
   int AppointmentID fk
-  int OwnerEmailAdress fk
+  int EmailAdress fk
   int PetsNumber
-  bool Repeat
   bitfield PlacementOptions
   nstring SpecialRequirements }
 
 Review {
-  int OwnerEmailAdress fk
-  int WalkerEmailAdress fk
+  int EmailAdress fk
+  int EmailAdress fk
   int Stars
   int Comment }
 
