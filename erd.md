@@ -12,7 +12,6 @@ Walker {
   string Biography 
   string Fname
   string Lname
-  int Options
   string Password }
 
 Owner {
